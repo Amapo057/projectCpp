@@ -31,14 +31,11 @@ Circle :: Circle ()
 :radius(0.0)
 {
     cout << radius << endl;
-    cout << "none" << endl;
-
 }
 Circle :: Circle (const Circle& cr)
 :radius(cr.radius)
 {
     cout << radius << endl;
-    cout << "point" << endl;
 }
 Circle :: ~Circle(){
     cout << "call destructor" << endl;
@@ -58,22 +55,18 @@ void Circle :: setRadius (double value){
 
 
 int main(){
+    // cout << "C1" << endl;
     Circle circle1(5.2);
+    // circle1.setRadius(10.0);
     cout << "R " << circle1.getRadius() << endl;
-    cout << "A " << circle1.getArea() << endl;
-    cout << "P " << circle1.getPerimeter() << endl;
-    cout << endl;
+    // cout << "A " << circle1.getArea() << endl;
+    // cout << "P " << circle1.getPerimeter() << endl << endl;
 
-    Circle circle2(circle1);
-    cout << "R " << circle1.getRadius() << endl;
-    cout << "A " << circle1.getArea() << endl;
-    cout << "P " << circle1.getPerimeter() << endl << endl;
-
-    Circle circle3;
-    cout << "R " << circle1.getRadius() << endl;
-    cout << "A " << circle1.getArea() << endl;
-    cout << "P " << circle1.getPerimeter() << endl;
-    cout << endl;
-
+    // cout << "C2:" << endl;
+    // Circle circle2;
+    // circle2.setRadius(20.0);
+    // cout << "R " << circle2.getRadius() << endl;
+    // cout << "A " << circle2.getArea() << endl;
+    // cout << "P " << circle2.getPerimeter() << endl << endl;
     return 0;
 }
