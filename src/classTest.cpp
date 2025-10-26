@@ -47,14 +47,14 @@ Circle :: ~Circle(){
 // 함수 정의
 double Circle :: getArea () const{
     const double PI = 3.14;
-    return (PI * this -> radius * (*this).radius);
+    return (PI * radius * radius);
 }
 double Circle :: getPerimeter () const{
     const double PI = 3.14;
-    return (2 * PI * this -> radius);
+    return (2 * PI * radius);
 }
-void Circle :: setRadius (double radius){
-    this -> radius = radius;
+void Circle :: setRadius (double value){
+    radius = value;
 }
 
 
@@ -71,7 +71,6 @@ int main(){
     cout << "P " << circle2.getPerimeter() << endl << endl;
 
     Circle circle3;
-    circle3.setRadius(99.0);
     cout << "R " << circle3.getRadius() << endl;
     cout << "A " << circle3.getArea() << endl;
     cout << "P " << circle3.getPerimeter() << endl;
