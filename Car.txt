@@ -1,0 +1,5 @@
+Brand: kia Speed: 50 Doors: 4
+Brand: hyundai Speed: 70 Doors: 4
+Brand: kg Speed: 20 Doors: 4
+Brand: audi Speed: 40 Doors: 2
+Brand: bmw Speed: 20 Doors: 2
