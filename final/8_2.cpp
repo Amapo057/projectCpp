@@ -39,7 +39,7 @@ class Bike : public Vehicle{
     public:
         void displayInfo()override{
             cout << "Brand: " << brand << " Speed: " << speed << " hasCarrier: " << boolalpha << hasCarrier << endl;
-        };;
+        };
         string toString()override{
             string base = Vehicle::toString();
             return base + " HasCarrier: " + (hasCarrier ? "true" : "false");
@@ -50,27 +50,26 @@ class Bike : public Vehicle{
 };
 
 int main(){
-    vector<int> speed = {5, 7, 2, 4, 2};
-
     vector<Car> car;
     vector<string> carBrand ={"kia", "hyundai", "kg", "audi", "bmw"};
     vector<int> doors = {4, 4, 4, 2, 2};
+    vector<int> carSpeed = {120, 150, 170, 180, 180};
 
     vector<Bike> bike;
     vector<string> bikeBrand = {"sam", "smart", "atex", "alton", "unkown"};
     vector<bool> carrier = {true, true, false, false, true};
+    vector<int> bikeSpeed = {5, 7, 2, 4, 2};
 
-    cout << "Car" << endl;
     for (size_t i = 0; i < carBrand.size(); ++i) {
         car.push_back(Car(carBrand[i], doors[i]));
-        car[i].setSpeed(speed[i]*10);
-        car[i].displayInfo();
+        car[i].setSpeed(carSpeed[i]);
+        // car[i].displayInfo();
     }
-    cout << "\nBike" << endl; 
+    
     for (size_t i = 0; i < bikeBrand.size(); ++i) {
         bike.push_back(Bike(bikeBrand[i], carrier[i]));
-        bike[i].setSpeed(speed[i]);
-        bike[i].displayInfo();
+        bike[i].setSpeed(bikeSpeed[i]);
+        // bike[i].displayInfo();
     }
 
     ofstream outFile1("Car.txt");
@@ -81,7 +80,17 @@ int main(){
         outFile1.close();
     }
     else{
-        cerr << "Can't open File" << endl;
+        cerr << "Car file can't open File" << endl;
+    }
+
+    cout << "Car" << endl;
+    ifstream readFile1("Car.txt");
+    if (readFile1.is_open()){
+        string line;
+        while (getline(readFile1, line)){
+            cout << line << endl;
+        }
+        readFile1.close();
     }
 
     ofstream outFile2("Bike.txt");
@@ -92,7 +101,17 @@ int main(){
         outFile2.close();
     }
     else{
-        cerr << "Can't open File" << endl;
+        cerr << "Bike file can't open File" << endl;
+    }
+
+    cout << "\nBike" << endl; 
+    ifstream readFile2("Bike.txt");
+    if (readFile2.is_open()){
+        string line;
+        while (getline(readFile2, line)){
+            cout << line << endl;
+        }
+        readFile2.close();
     }
 
 }
