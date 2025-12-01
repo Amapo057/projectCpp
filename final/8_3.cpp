@@ -60,6 +60,27 @@ int main(){
         manager[i].showInfo();
     }
 
+    ofstream outFile1("Manager.txt");
+    if (outFile1.is_open()){
+        for(auto& m: manager){
+            outFile1 << m.toString() <<endl;
+        }
+        outFile1.close();
+    }
+    else{
+        cerr << "Manager file can't open File" << endl;
+    }
+
+    cout << "Manager" << endl;
+    ifstream readFile1("Manager.txt");
+    if (readFile1.is_open()){
+        string line;
+        while (getline(readFile1, line)){
+            cout << line << endl;
+        }
+        readFile1.close();
+    }
+
     cout << "Engineer" << endl;
     for(size_t i = 0; i < engineerName.size(); ++i){
         engineer.push_back(Engineer(engineerName[i], engineerID[i], engineerSalary[i], engineerSpecialty[i]));
