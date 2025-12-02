@@ -12,7 +12,7 @@ class Vehicle{
         virtual void displayInfo() = 0;
         void setSpeed(int s){this->speed = s;};
         virtual string toString(){
-            return "Brand: " + brand + " Speed: " + to_string(speed);
+            return brand + ", " + to_string(speed);
         };
 
         Vehicle(string brand):brand(brand){};
@@ -27,7 +27,7 @@ class Car : public Vehicle{
         };
         string toString()override{
             string base = Vehicle::toString();
-            return base + " Doors: " + to_string(doors);
+            return base + ", " + to_string(doors);
         };
 
         Car(string brand, int doors):Vehicle(brand), doors(doors){};
@@ -42,7 +42,7 @@ class Bike : public Vehicle{
         };
         string toString()override{
             string base = Vehicle::toString();
-            return base + " HasCarrier: " + (hasCarrier ? "true" : "false");
+            return base + ", " + (hasCarrier ? "true" : "false");
         };
 
         Bike(string brand, bool hasCarrier):Vehicle(brand), hasCarrier(hasCarrier){};
@@ -58,7 +58,7 @@ int main(){
     vector<Bike> bike;
     vector<string> bikeBrand = {"sam", "smart", "atex", "alton", "unkown"};
     vector<bool> carrier = {true, true, false, false, true};
-    vector<int> bikeSpeed = {5, 7, 2, 4, 2};
+    vector<int> bikeSpeed = {20, 33, 32, 27, 30};
 
     for (size_t i = 0; i < carBrand.size(); ++i) {
         car.push_back(Car(carBrand[i], doors[i]));

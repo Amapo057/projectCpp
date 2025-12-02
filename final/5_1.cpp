@@ -12,17 +12,14 @@ class Student{
     public:
         virtual void displayInfo();
         void setGPA(double g){this->gpa = g;};
-        virtual string toString(){return 
-            "Student Name: " + name + 
-            " ID: " + to_string(studentID) + 
-            " GPA: " + to_string(gpa);}
+        virtual string toString(){return name + ", " + to_string(studentID) + ", " + to_string(gpa);}
 
         Student() :name("asdf"), studentID(0000){};
         Student(string name, int id) :name(name), studentID(id){};
 };
 
 void Student :: displayInfo(){
-    cout<<"Student Name: "<< name << "\nStudent ID: " << studentID << "\nStudent GPA: " << gpa << endl;
+    cout<< "Student Name: "<< name << "\nStudent ID: " << studentID << "\nStudent GPA: " << gpa << endl;
 }
 
 class GraduateStudent : public Student{
@@ -42,7 +39,7 @@ void GraduateStudent :: displayInfo(){
 }
 string GraduateStudent::toString(){
     string base = Student::toString();
-    return base + " Topic: " + researchTopic;
+    return base + ", " + researchTopic;
 }
 
 int main(){

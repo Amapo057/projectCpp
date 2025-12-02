@@ -1,5 +1,5 @@
-Student Name: kjs ID: 2021 GPA: 4.500000 Topic: cpp
-Student Name: asd ID: 2022 GPA: 3.200000 Topic: java
-Student Name: fgh ID: 2023 GPA: 4.000000 Topic: c
-Student Name: qwe ID: 2024 GPA: 2.100000 Topic: python
-Student Name: zxc ID: 2025 GPA: 3.900000 Topic: c#
+kjs, 2021, 4.500000, cpp
+asd, 2022, 3.200000, java
+fgh, 2023, 4.000000, c
+qwe, 2024, 2.100000, python
+zxc, 2025, 3.900000, c#

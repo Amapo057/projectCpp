@@ -1,5 +1,5 @@
-Brand: kia Speed: 120 Doors: 4
-Brand: hyundai Speed: 150 Doors: 4
-Brand: kg Speed: 170 Doors: 4
-Brand: audi Speed: 180 Doors: 2
-Brand: bmw Speed: 180 Doors: 2
+kia, 120, 4
+hyundai, 150, 4
+kg, 170, 4
+audi, 180, 2
+bmw, 180, 2

@@ -1,5 +1,5 @@
-Brand: sam Speed: 5 HasCarrier: true
-Brand: smart Speed: 7 HasCarrier: true
-Brand: atex Speed: 2 HasCarrier: false
-Brand: alton Speed: 4 HasCarrier: false
-Brand: unkown Speed: 2 HasCarrier: true
+sam, 20, true
+smart, 33, true
+atex, 32, false
+alton, 27, false
+unkown, 30, true
