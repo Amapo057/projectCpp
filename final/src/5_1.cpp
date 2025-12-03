@@ -18,7 +18,8 @@ class Student{
         
         Student():name("Hong"), studentID(00000000){};     // 기본 생성자
         Student(string name, int id)                       // 변수 생성자
-            :name(name), studentID(id){};  
+            :name(name), studentID(id){};
+        virtual ~Student(){};                              // 메모리 누수 방지용 가상 소멸자
 };
 
 // 정보 출력 함수

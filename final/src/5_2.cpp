@@ -16,6 +16,7 @@ class Vehicle{
             return brand + ", " + to_string(speed);};     // 문자열 출력 함수
         Vehicle():brand("None"){};                  // 기본 생성자
         Vehicle(string brand):brand(brand){};       // 변수 생성자
+        virtual ~Vehicle(){};                       // 메모리 누수를 막기위한 가상 소멸자
 };
 
 // Vehicle에서 상속받아 자식 클래스 생성
@@ -48,8 +49,7 @@ class Bike : public Vehicle{
             "  Speed: " << speed << 
             "  hasCarrier: " << boolalpha << hasCarrier << endl;
         };
-        // 부모 함수로 기본 멤버 변수를 문자열로 담고, 추가 변수와 같이 출력
-        string toString()override{
+        string toString()override{          // 부모 함수로 기본 멤버 변수를 문자열로 담고, 추가 변수와 같이 출력
             string base = Vehicle::toString();
             return base + ", " + (hasCarrier ? "true" : "false");
         }; 
@@ -77,7 +77,6 @@ int main(){
         car[i].setSpeed(carSpeed[i]);
         car[i].displayInfo();
     }
-
     // 저장할 파일 열기/생성 후 toString 함수로 내용 작성
     ofstream outFile1("Car.txt");
     if (outFile1.is_open()){         // 파일이 열렸는지 확인
@@ -87,8 +86,7 @@ int main(){
         outFile1.close();
     }
     else{cerr << "Car file can't open File" << endl;}
-
-    // 읽을 파일 연 후 줄 단위로 잘라 출력
+    // 읽을 Car 파일 연 후 줄 단위로 잘라 출력
     cout << "\nRead file" << endl;
     ifstream readFile1("Car.txt");
     if (readFile1.is_open()){
@@ -106,8 +104,8 @@ int main(){
         bike[i].setSpeed(bikeSpeed[i]);
         bike[i].displayInfo();
     }
-
-    ofstream outFile2("Bike.txt");      // 겹치지 않도록 outFile2로 파일 열기
+    // 겹치지 않도록 outFile2로 파일 열기
+    ofstream outFile2("Bike.txt");      
     if (outFile2.is_open()){
         for(auto& b : bike){
             outFile2 << b.toString() << endl;
@@ -115,7 +113,7 @@ int main(){
         outFile2.close();
     }
     else{cerr << "Bike file can't open File" << endl;}
-
+    // 읽을 Bike 파일 연 후 줄 단위로 잘라 출력
     cout << "\nRead file" << endl; 
     ifstream readFile2("Bike.txt");
     if (readFile2.is_open()){

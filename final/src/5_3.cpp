@@ -23,6 +23,7 @@ class Employee{
         Employee():name("Jane Doe"), id(0), salary(0){};    // 기본 생성자
         Employee(string name, int id, int salary)           // 변수 생성자
             :name(name), id(id), salary(salary){};
+        virtual ~Employee(){};                              // 메모리 누수 방지용 가상 소멸자
 };
 
 // Employee에서 상속받아 자식 클래스 생성
