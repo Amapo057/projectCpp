@@ -5,9 +5,10 @@
 using namespace std;
 // g++ ./final/src/5_3.cpp -o ./bin/main; ./bin/main
 
+
 // 기본 학생 클래스
 class Student{
-    private:        // 공통으로 사용될 멤버 변수
+    protected:        // 공통으로 사용될 멤버 변수
         string name;
         int studentID;
         double gpa;
